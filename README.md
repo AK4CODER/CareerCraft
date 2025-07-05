@@ -1,4 +1,5 @@
-🎯 CareerCraft – AI-powered Career Development Platform 🚀  
+# 🚀💼 **CareerCraft**  
+### *Your Smart Assistant for Building a Successful Career* 
 CareerCraft is a smart, modern career development web app built using **Next.js 14**, **TailwindCSS**, **Shadcn/UI**, and powered by **AI via Google Gemini**. It helps users explore industries, generate resumes, ace quizzes, and craft cover letters — all personalized to their chosen career path.
 
 ---
@@ -27,7 +28,7 @@ CareerCraft is a smart, modern career development web app built using **Next.js 
 
 ## 🔗 Live App
 
-👉 Visit CareerCraft Live on Vercel: [https://careercraft.vercel.app](https://careercraft.vercel.app)
+👉 Visit CareerCraft Live on Vercel: [CareerCraft](https://career-craft-zeta.vercel.app/)
 
 ---
 
@@ -46,8 +47,9 @@ CareerCraft is a smart, modern career development web app built using **Next.js 
 ---
 
 ## 🛠️ Setup `.env` File
-Add the following environment variables in a .env file:
+Create a `.env.local` file in the project root and add:
 
+```env
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 CLERK_SECRET_KEY=your_clerk_secret_key
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
@@ -57,3 +59,4 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
 DATABASE_URL=your_postgres_url
 DIRECT_URL=your_postgres_direct_url
 GEMINI_API_KEY=your_google_gemini_key
+
