@@ -1,179 +1,59 @@
-# SkillSync (Ai-powered Career Development Platform)
-
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Architecture & Components](#architecture--components)
-- [Installation & Setup](#installation--setup)
-- [Usage](#usage)
-- [Database Schema](#database-schema)
-- [Background Jobs & Workflows](#background-jobs--workflows)
-- [Configuration & Environment Variables](#configuration--environment-variables)
-- [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
-- [Contact](#contact)
+🎯 CareerCraft – AI-powered Career Development Platform 🚀  
+CareerCraft is a smart, modern career development web app built using **Next.js 14**, **TailwindCSS**, **Shadcn/UI**, and powered by **AI via Google Gemini**. It helps users explore industries, generate resumes, ace quizzes, and craft cover letters — all personalized to their chosen career path.
 
 ---
 
-## Project Overview
-The **SkillSync** is a full-stack web application designed to guide users through the career development process with AI-driven insights and tools. From onboarding and industry analysis to resume generation, quizzes, and cover letters, this platform centralizes all aspects of career planning into an intuitive, personalized experience.
+## ✨ Features
 
-**Key Objectives:**
-- Personalize career guidance based on user-selected industries and skills
-- Automate resume and cover letter creation using Markdown and AI (Google Gemini)
-- Provide interactive AI-generated quizzes to track learning progress
-- Visualize industry trends and user performance with dynamic charts
-
----
-
-## Features
-- **User Authentication & Profiles**: Secure signup/login via Clerk, with customizable profile pages
-- **Onboarding Flow**: Industry, sub-industry, and skill selection stored in PostgreSQL
-- **Industry Insights**: AI-curated market outlooks, salary trends, trending jobs, and recommended skills (charts powered by Shadcn)
-- **Resume Builder**: Markdown-driven resume templates, real-time preview, customization, and PDF download
-- **AI Quiz Module**: Dynamic multiple-choice quizzes, automated scoring, and performance tracking over time
-- **Cover Letter Generator**: AI-generated, role- and company-specific cover letters (powered by Google Gemini), stored and editable
-- **User Dashboard**: Central hub displaying insights, resume, quiz history, and cover letters
+🎯 Personalized onboarding for industry & skill selection  
+🧠 AI-driven resume builder with real-time preview and markdown support  
+✍️ Google Gemini-powered cover letter generator  
+📊 Interactive charts for industry insights and performance tracking  
+📝 Dynamic MCQ quizzes with AI-generated questions and auto scoring  
+🧑‍💼 User profile management with Clerk Authentication  
+📂 Organized dashboard: insights, resumes, quizzes, and letters  
+⚙️ Inngest-powered background workflows (quiz scoring, PDF generation)  
+💾 PostgreSQL database with Prisma ORM  
+🧩 Fully responsive and modern UI  
+🚀 Deployed on Vercel
 
 ---
 
-## Tech Stack
-| Layer               | Technology             |
-|---------------------|------------------------|
-| Frontend Framework  | Next.js                |
-| UI Components       | Shadcn (Tailwind CSS)  |
-| Authentication      | Clerk                  |
-| Background Jobs     | Inngest                |
-| ORM & Database      | Prisma & PostgreSQL    |
-| AI & Language Model | Google Gemini API      |
-| Hosting & Deployment| Vercel (Next.js)       |
+## 📌 About the Project
+
+**CareerCraft** simplifies career development by bringing together essential tools in one place. Whether you're a student, job-seeker, or working professional, CareerCraft provides AI-curated insights, smart resume tools, and real-time career tracking to keep you ahead.
 
 ---
 
-## Architecture & Components
-1. **Next.js Client & Server**  
-   - Server-side rendering for SEO and performance  
-   - API routes for backend logic and data operations
+## 🔗 Live App
 
-2. **Clerk**  
-   - User authentication, sessions, and profile management  
-   - Prebuilt React components and hooks
-
-3. **Prisma & PostgreSQL**  
-   - Data models: User, IndustryPreference, ResumeData, QuizResult, CoverLetter, Skill  
-   - Easy migrations and type-safe queries
-
-4. **Inngest**  
-   - Background workflows (quiz scoring, cover letter generation)
-
-5. **AI Integrations**  
-   - Google Gemini prompts for quizzes and cover letters
+👉 Visit CareerCraft Live on Vercel: [https://careercraft.vercel.app](https://careercraft.vercel.app)
 
 ---
 
-## Installation & Setup
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/ai-career-coach.git
-   cd ai-career-coach
-   ```
+## 🛠️ Tech Stack
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Configure environment variables**
-   Create a `.env.local` file:
-   ```env
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY= your_publishable_key_clerk
-   CLERK_SECRET_KEY= Clerk_secret_key
-   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
-   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
-   DATABASE_URL= postgresql_database_url
-   DIRECT_URL= postgresql_direct_url
-   GEMINI_API_KEY= your_gemini_key
-   ```
-
-4. **Run database migrations**
-   ```bash
-   npx prisma migrate dev --name init
-   ```
-
-5. **Start development server**
-   ```bash
-   npm run dev
-   ```
+| Layer            | Technology                         |
+|------------------|-------------------------------------|
+| Frontend         | Next.js 14 (App Router)             |
+| Styling & UI     | TailwindCSS + Shadcn/UI             |
+| Authentication   | Clerk (Sign in / Sign up)           |
+| ORM & DB         | Prisma + PostgreSQL                 |
+| Background Jobs  | Inngest                             |
+| AI Integration   | Google Gemini API                   |
+| Deployment       | Vercel                              |
 
 ---
 
-## Usage
-- **Onboarding**: Navigate to `/onboarding` to set industry preferences
-- **Dashboard**: Visit `/dashboard` for personalized charts and insights
-- **Resume**: Go to `/resume` to build, preview, customize, and download your resume
-- **Interview (Quizzes)**: Access `/interview` for AI-generated quizzes and performance tracking
-- **Cover Letter**: Open `/ai-cover-letter` to generate and manage cover letter drafts
+## 🛠️ Setup `.env` File
+Add the following environment variables in a .env file:
 
----
-
-## Database Schema 
-```prisma
-model User {
-  id            String      @id @default(cuid())
-  email         String      @unique
-  clerkId       String      @unique
-  preferences   Preference[]
-  resumeData    ResumeData?
-  quizResults   QuizResult[]
-  coverLetters  CoverLetter[]
-  createdAt     DateTime    @default(now())
-}
-
-// ... other models (Assessment, , IndustryInsight, CoverLetter, Resume)
-```
-
----
-
-## Background Jobs & Workflows
-- **Quiz Workflow**: Generates quiz questions via Gemini, scores submissions, and updates `QuizResult`
-- **Cover Letter Workflow**: Sends prompts to Gemini, saves generated cover letter
-- **Resume PDF Generation**: Converts markdown resume to PDF on demand
-
----
-
-## Configuration & Environment Variables
-| Variable                                   | Description                             |
-|--------------------------------------------|-----------------------------------------|
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`        | Clerk frontend publishable key          |
-| `CLERK_SECRET_KEY`                         | Clerk backend secret key                |
-| `NEXT_PUBLIC_CLERK_SIGN_IN_URL`            | Path for sign-in page                   |
-| `NEXT_PUBLIC_CLERK_SIGN_UP_URL`            | Path for sign-up page                   |
-| `NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`      | Redirect after sign-in                  |
-| `NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL`      | Redirect after sign-up                  |
-| `DATABASE_URL`                             | Primary Neon Postgres connection string |
-| `DIRECT_URL`                               | Direct Neon Postgres connection string  |
-| `GEMINI_API_KEY`                           | Google Gemini API key                   |
-
----
-
-## Future Enhancements
-- Connection pooling
-- Built-in ATS scanning
-- AI chatbot for career queries
-- Real-time job board API integrations (LinkedIn, Indeed)
-- LinkedIn profile auto-import
-
----
-
-## Contributing
-Contributions are welcome! Please open an issue or submit a pull request.
-
----
-
-## Contact
-Developed by [Namra Vora] – [voranamra625@gmail.com]  
-GitHub: https://github.com/Vora-Namra  
-LinkedIn: https://www.linkedin.com/in/namra-vora/
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
+DATABASE_URL=your_postgres_url
+DIRECT_URL=your_postgres_direct_url
+GEMINI_API_KEY=your_google_gemini_key
