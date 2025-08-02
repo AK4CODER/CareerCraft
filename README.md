@@ -46,7 +46,7 @@ CareerCraft is a smart, modern career development web app built using **Next.js 
 
 ---
 
-SCREENSHOTS
+## SCREENSHOTS
 
 ![Screenshot](https://github.com/user-attachments/assets/bb1f7fbe-0189-463a-85bc-128fa6749e59)
 ![Screenshot](https://github.com/user-attachments/assets/31d0df08-4c40-441b-aeb3-0b483c892b2c)
