@@ -47,7 +47,17 @@ CareerCraft is a smart, modern career development web app built using **Next.js 
 ---
 
 SCREENSHOTS
+
 ![Screenshot](https://github.com/user-attachments/assets/bb1f7fbe-0189-463a-85bc-128fa6749e59)
+![Screenshot](https://github.com/user-attachments/assets/31d0df08-4c40-441b-aeb3-0b483c892b2c)
+![Screenshot](https://github.com/user-attachments/assets/9939757a-54b7-453e-be71-e6c48970b64a))
+![Screenshot](https://github.com/user-attachments/assets/018cc594-007a-4110-99eb-fc6374e82e83)
+![Screenshot](https://github.com/user-attachments/assets/38a77697-78c4-4448-ab28-86519ebe9809)
+![Screenshot](https://github.com/user-attachments/assets/a28774b8-5db4-4df2-8c61-6e7cbc21e086)
+![Screenshot](https://github.com/user-attachments/assets/68f8ef1e-d72b-4d49-a1c1-495ec7ebc137)
+![Screenshot](https://github.com/user-attachments/assets/c3548f78-3669-4a12-a91a-ccb789cba38e)
+![Screenshot](https://github.com/user-attachments/assets/d0859f48-d4aa-42ca-91ed-2b0ea8ab1cb1)
+
 
 ---
 ## 🛠️ Setup `.env` File
